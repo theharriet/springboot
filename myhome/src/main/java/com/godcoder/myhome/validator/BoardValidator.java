@@ -27,7 +27,7 @@ public class BoardValidator implements Validator{
 // isEmpty가 deprecated 되어 대체로는 StringUtils.hasText 또는 ObjectUtils.isEmpty로 대체 가능합니다.
 // 사용상 주의점은 hasText의 겨우 조건이 반대로 됩니다.
 // StringUtils.isEmpty(null) = true;
-//StringUtils.hasText(null) = false;
+// StringUtils.hasText(null) = false;
     }
 
 }
