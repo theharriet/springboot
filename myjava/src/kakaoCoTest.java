@@ -31,9 +31,22 @@ n	6
 arr1	[46, 33, 33 ,22, 31, 50]
 arr2	[27 ,56, 19, 14, 14, 10]
 출력	["######", "### #", "## ##", " #### ", " #####", "### # "]
+
+
+
+        int n = 5;
+        int[] arr1 = {9, 20, 28, 18, 11};
+        int[] arr2 = {30, 1, 21, 17, 28};
+
+        String[] result = new String[n];
+        for(int i = 0; i < n; i++){
+            int arr = arr1[i] + arr2[i];
+            System.out.println(Integer.toBinaryString(arr1[i] | arr2[i]).replace("1", "#").replace("0", " "));
+        }
+    }
  */
 
-    int n;
-    int[] arr1;
-    int[] arr2;
+
+
+
 }
