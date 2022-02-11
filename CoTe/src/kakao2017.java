@@ -1,4 +1,4 @@
-public class kakaoCoTest {
+public class kakao2017 {
 /*
 https://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/
 1. 비밀 지도(난이도: 하)
