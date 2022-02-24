@@ -2,7 +2,9 @@ package com.stimulusfake.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing // JPA Auditing 활성화
 @SpringBootApplication
 public class Application {
     // @SpringBootApplication로 인해 springboot의자동속성, springbean 읽기와 생성을 자동으로 설정
@@ -15,4 +17,8 @@ public class Application {
         // 이거로 인해 내장 WAS(web application server) 서버를 실행. -> 톰캣이 필요없다는 소리
     }
 
+    //application.properties에
+    //spring.h2.console.enabled=true 추가 후 main메소드 돌리고
+    //http://localhost:8080/h2-console
+    //jdbc:h2:mem:testdb jdbc url 변경
 }

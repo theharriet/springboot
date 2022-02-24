@@ -1,6 +1,7 @@
 package com.stimulusfake.springboot.domain.posts;
 // 도메인 패키지에서는 도메인(게시글, 댓글, 회원, 정산, 결제 등 소프트웨어)에 대한 요구사항 혹은 문제영역을 담을 것이다
 
+import com.stimulusfake.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter // lombok의 어노테이션 - 코드를 단순화 시켜주지만 필수어노테이션은 아님 6 Getter
 @NoArgsConstructor // lombok의 어노테이션 5 NoArgsConstructor
 @Entity // 1 Entity - JPA의 어노테이션
-public class Posts {
+public class Posts extends BaseTimeEntity {
     // 실제 DB의 테이블과 매칭될 클래스이며, 보통 ENTITY클래스라 부름
     
     @Id // 2 Id
@@ -30,9 +31,14 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
-
     }
-    
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
+
     /*
     1 Entity : 테이블과 링크될 클래스임을 나타냄
                 기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍(_)으로 테이블 이름을 매칭
