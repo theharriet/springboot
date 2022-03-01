@@ -9,7 +9,7 @@
 </head>
 <body>
     {{>layout/header}}
-            <!--    {{>}}는 현재 머스테치 파일을 기준으로 다른 파일을 가져옴    -->
+            <!--    { {>}}는 현재 머스테치 파일을 기준으로 다른 파일을 가져옴    -->
         <h1>스프링 부트 웹 서비스 Ver.2</h1>
         <div class="col-md-12">
             <div class="row">
@@ -32,8 +32,8 @@
         <tbody id="tbody">
             {{#posts}}  <!--   mustache문법 - posts라는 list를 순회한다(java의 for)     -->
                 <tr>
-                    <td>{{id}}</td>  <!-- {{변수명}} list에서 뽑아낸 객체의 필드를 사용한다 -->
-                    <td>{{title}}</td>
+                    <td>{{id}}</td>  <!-- { {변수명}} list에서 뽑아낸 객체의 필드를 사용한다 -->
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
                     <td>{{content}}</td>
                 </tr>
