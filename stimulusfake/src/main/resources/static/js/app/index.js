@@ -40,7 +40,7 @@ var main = {
 
         $.ajax({
             type: 'PUT', //controller에서 @putmapping을 했기 때문에 put을 사용해야한다
-            url: '/api/v1/posts' + id,
+            url: '/api/v1/posts/' + id,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
