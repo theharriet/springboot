@@ -50,8 +50,13 @@ public class PostsService {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new).collect(Collectors.toList());
     }
-
     //.map(PostsListResponseDto::new) == .map(posts -> new PostsListResponseDto(posts)) 두개 같은거
 
+    @Transactional
+    public void delete (Long id){
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+        postsRepository.delete(posts); // 엔티티를 파라미터로 삭제할 수도 있고, deleteById메소드를 이용하면 id로도 가능
+                                    // 존재하는 Entity인지 확인을 위해 조회 후 그대로 삭제.
+    }
 
 }
