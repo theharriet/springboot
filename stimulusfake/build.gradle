@@ -51,6 +51,7 @@ dependencies {
             여기서는 JPA의 테스트, 로컬 환경에서의구동에서 사용할 예정.
      */
     implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
 
 //test {
