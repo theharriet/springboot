@@ -1,5 +1,6 @@
 package com.stimulusfake.springboot.web;
 
+import com.stimulusfake.springboot.config.auth.LoginUser;
 import com.stimulusfake.springboot.config.auth.dto.SessionUser;
 import com.stimulusfake.springboot.service.posts.PostsService;
 import com.stimulusfake.springboot.web.dto.PostsResponseDto;
@@ -22,13 +23,12 @@ public class IndexController {
     // 해당 파일은 view resolver가 처리하게 된다. (view resolver는 url요청의 결과를 전달할 타입과 값을 지정하는 관리자)
 
     private  final PostsService postsService;
-    private  final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
         // index.mustache에서 userName을 사용할수 있게 model에 저장하는 코드 추가
-        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 1
+        // SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 1
         if (user != null){ // 2
             model.addAttribute("userName", user.getName());
         }
