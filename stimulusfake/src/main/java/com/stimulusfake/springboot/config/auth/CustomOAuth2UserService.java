@@ -1,6 +1,7 @@
 package com.stimulusfake.springboot.config.auth;
 
 import com.stimulusfake.springboot.config.auth.dto.OAuthAttributes;
+import com.stimulusfake.springboot.config.auth.dto.SessionUser;
 import com.stimulusfake.springboot.domain.user.User;
 import com.stimulusfake.springboot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
