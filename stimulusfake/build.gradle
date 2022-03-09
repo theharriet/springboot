@@ -54,6 +54,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
     implementation('org.springframework.session:spring-session-jdbc')
 //    org.springframework.session:spring-session-jdbc : 데이터베이스를 session 저장소로 사용하기 위해
+
+    testImplementation('org.springframework.security:spring-security-test')
 }
 
 //test {
