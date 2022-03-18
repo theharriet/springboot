@@ -2,7 +2,7 @@
 buildscript {
     //ext - build.gradle에서 전역변수를 설정하겠다는 의미 / springBootVersion 이게 변수
     ext {
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.2.0.RELEASE'
     }
 
     repositories {
