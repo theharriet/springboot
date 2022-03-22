@@ -61,3 +61,13 @@ nohup java -jar $REPOSITORY/$JAR_NAME 2>&1 &
 // 일반적으로 자바를 실행할 때는 java -jar라는 명령어를 사용하지만, 
 // 이렇게 하면 사용자가 터미널 접속을 끊을 때 애플리케이션도 같이 종료된다.
 // 애플리케이션 실행자가 터미널을 종료해도 애플리케이션은 계속 구동될 수 있도록 nohup명령어를 사용
+
+//마지막줄 변경
+//nohup java -jar \
+        -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties \
+        $REPOSITORY/$JAR_NAME 2>&1 &
+//-Dspring.config.location : 스프링 설정 파일 위치를 지정한다
+//              기본 옵션들을 담고있는 application.properties와 OAuth 설정들을 담고 있는application-oauth.properties의 위치를 지정
+// classpath가 붙으면 jar 안에 있는 resources 디렉토리를 기준으로 경로가 생성된다
+// application-oauth.properties는 절대경로 사용(외부에 파일이 있기 때문)
+
