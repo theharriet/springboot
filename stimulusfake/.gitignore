@@ -14,3 +14,5 @@ hs_err_pid*
 .idea
 
 application-oauth.properties
+
+# gitignore ..are u working?
