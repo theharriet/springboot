@@ -15,4 +15,5 @@ hs_err_pid*
 
 application-oauth.properties
 
-# gitignore ..are u working?
+build
+out

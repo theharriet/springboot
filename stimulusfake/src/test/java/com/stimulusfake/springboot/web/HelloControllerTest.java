@@ -2,14 +2,14 @@ package com.stimulusfake.springboot.web;
 
 
 import com.stimulusfake.springboot.config.auth.SecurityConfig;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
@@ -18,11 +18,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // excludeFilters : @WebMvcTest가 SecurityConfig를 생성하기 위해 필요한 CustomOAuth2UserService를 읽을 수가
 //                  없어서 에러가 남. 따라서 이런식으로 스캔대상에서 SecurityConfig를 제거.
-// RunWith : 테스트를 진행 할 때 JUnit에 내장된 실행자 외에 다른 실행자를 실행시킴 - springRunner라는 스프링 실행자
+// RunWith : 테스트를 진행 할 때 JUnit에 내장된 실행자 외에 다른 실행자를 실행시킴 - SpringExtension라는 스프링 실행자
 // 스프링 부트 테스트와 Junit 사이에 연결자 역할.
 // @WebMvcTest : Web(Spring MVC)에 집중할 수 있는 어노테이션 -> @Controller, @ControllerAdvice 등을 사용할수 있음
 // 단, @Service, @Component, @Repository 등은 사용 불가 - 여기서는 컨트롤러만 사용하기에 선언.
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = HelloController.class,
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,  // excludeFilters
                 classes = SecurityConfig.class)})
