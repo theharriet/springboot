@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostsService {
 
-    public final PostsRepository postsRepository;
+    private final PostsRepository postsRepository;
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
